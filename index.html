@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="en">
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Questionário para aprendizado de acessibilidade.">
     <link rel="stylesheet" href="styles.css">
     <title>Quiz</title>
-</head>
-<body>
-    
-</body>
+  </head>
+
+  <body>
+    <header>
+      <img src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" id="logo" alt="freeCodeCamp">
+      <h1>HTML/CSS Quiz</h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="#student-info">INFO</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
+
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <label for="student-name">Name</label>
+            <input id="student-name" type="text" name="student-name" placeholder="Enter your name">
+          </div>
+          <div class="info">
+            <label for="student-email">Email</label>
+            <input type="email" name="student-email" id="student-email" placeholder="Enter your email">
+          </div>
+          <div class="info">
+            <label for="birth-date">Date of Birth</label>
+            <input type="date" name="birth-date" id="birth-date" placeholder="Enter your date of birth">
+          </div>
+        </section>
+
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML Questions</h2>
+          <div class="question-block">
+            <h3>1<span class="sr-only">Question</span></h3>
+            <fieldset class="question" name="html-question-one">
+              <legend>First Html Question</legend>
+              <ul class="answers-list">
+                <li><label for="q1-a1"><input type="radio" name="q1" id="q1-a1" value="true">True</label></li>
+                <li><label for="q1-a2"><input type="radio" name="q1" id="q1-a2" value="false">False"></label></li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <h3>2<span class="sr-only">Question</span></h3>
+            <fieldset class="question" name="html-question-two">
+              <legend>Second Html Question</legend>
+              <ul class="answers-list">
+                <li><label for="q2-a1"><input type="radio" name="q2" id="q2-a1" value="true">True</label></li>
+                <li><label for="q2-a2"><input type="radio" name="q2" id="q2-a2" value="false">False"></label></li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+
+
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS Questions</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label for="selector">Can the CSS margin property accept negative values?</label>
+            </div>
+            <div class="answer">
+                <select id="selector" name="selector" required>
+                  <option value="">Select an option</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+            <div class="question-block">
+              <label for="user-question">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea name="user-question" id="user-question" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+        </section>
+        
+        <button type="submit">Send</button>
+        
+      </form>
+    </main>
+
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a><br />
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+
 </html>
